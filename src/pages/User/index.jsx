@@ -1,5 +1,11 @@
+import { Header } from "../../components/Header";
+import{ Container } from "./styles"
+
+
 export function User () {
   return (
-    <h1>Hello World!!!</h1>
+    <Container>
+      <Header/>
+      </Container>
   )
 }
