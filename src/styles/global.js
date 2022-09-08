@@ -12,22 +12,31 @@ export const GlobalStyles = createGlobalStyle`
   };
 
   body {
-    background-color: ${ ({ theme }) => theme.COLORS.GRAY_800 };
+    background-color: ${ ({ theme }) => theme.COLORS.GRAY_900 };
     color: ${ ({ theme }) => theme.COLORS.WHITE };
   };
 
   a, button {
     text-decoration: none;
     border: none;
+    
+    transition: filter 200ms;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   };
 
   body, input, button, textarea {
-      font-family: "Roboto Slab", serif;
-      font-size: 1.6rem;
+      font-family: "Roboto Slab", serif;      
+      font-size: 1.4rem;
+      color: ${ ({ theme }) => theme.COLORS.WHITE };
+
       outline: none;
   };
 
-  ul li {
+  ul {
     list-style: none;
   };
 `;
