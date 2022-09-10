@@ -5,21 +5,12 @@ export const Container = styled.div`
   height: 100vh;
 
   header {
+    width: 100%;
     height: 14.4rem;
     padding-left: 16.8rem;
     display: flex;
     align-items: center;
-    
-    &:before {
-      content: "";
-      width: 100%;
-      height: 14.4rem;
-      
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: ${ ({ theme }) => theme.COLORS.PINK_TRANSPARENT };
-    }
+    background-color: ${ ({ theme }) => theme.COLORS.PINK_TRANSPARENT };
   };
 `;
 

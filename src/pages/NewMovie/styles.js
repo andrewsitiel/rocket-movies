@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  padding-inline: 12.3rem;
+`;
+
 export const Form = styled.form`
   display: grid;
   gap: 4rem;

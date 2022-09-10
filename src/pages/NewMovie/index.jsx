@@ -5,12 +5,12 @@ import {FiArrowLeft} from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Link } from "../../components/Link";
-import { Form } from "./styles";
+import { Container, Form } from "./styles";
 import { NoteItem } from "../../components/NoteItem";
 
 export function NewMovie () {
   return(
-    <>  
+    <Container>  
       <Header/>
         <ScrollableArea height={"70vh"}>
           <Link href="/" title="Voltar" icon={FiArrowLeft}/>
@@ -34,6 +34,6 @@ export function NewMovie () {
             <Button title="Salvar alterações" type="submit"/>
           </Form>
         </ScrollableArea>
-    </>
+    </Container>
   )
 }
