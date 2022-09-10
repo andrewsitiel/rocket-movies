@@ -14,6 +14,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background-color: ${ ({ theme }) => theme.COLORS.GRAY_900 };
     color: ${ ({ theme }) => theme.COLORS.WHITE };
+    padding-inline: 12.3rem;
+    overflow: hidden;
   };
 
   a, button {

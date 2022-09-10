@@ -5,10 +5,11 @@ export const Container = styled.header`
   
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 6.4rem;
 
   border-bottom: 1px solid ${ ({ theme })=> theme.COLORS.GRAY_800 };
+  margin-bottom: 4rem;
 
   h1 {
     font-size: 2.4rem;

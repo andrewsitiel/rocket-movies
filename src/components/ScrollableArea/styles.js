@@ -6,4 +6,7 @@ export const Container = styled(SimpleBar)`
     background: ${ ({ theme }) => theme.COLORS.PINK };
     opacity: 1;
   }
+
+  padding-right: 2.4rem;
+  overflow-x: hidden;
 `;

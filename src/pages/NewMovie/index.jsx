@@ -4,25 +4,36 @@ import { ScrollableArea } from "../../components/ScrollableArea";
 import {FiArrowLeft} from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { Container } from "./styles";
+import { Link } from "../../components/Link";
+import { Form } from "./styles";
+import { NoteItem } from "../../components/NoteItem";
 
 export function NewMovie () {
   return(
-    <Container>
-    <Header/>
-      <ScrollableArea height={581}>
-        <a href="/"><FiArrowLeft/>Voltar</a>
-
-        <form action="">
-          <h1>Novo filme</h1>
-          <Input title="Título" type="text"/>      
-          <Input title="Digite sua nota (de 0 a 5)" type="number" min="0" max="5"/>      
-          <textarea/>
-          <h2>Marcadores</h2>
-          <div></div>
-          <Button title="Salvar alterações" type="submit"/>
-        </form>
-      </ScrollableArea>
-    </Container>
+    <>  
+      <Header/>
+        <ScrollableArea height={"70vh"}>
+          <Link href="/" title="Voltar" icon={FiArrowLeft}/>
+          <Form>
+            <legend>Novo filme</legend>
+    
+            <div>
+              <Input title="Título" type="text"/>
+              <Input title="Digite sua nota (de 0 a 5)" type="number" min="0" max="5"/>
+              <textarea placeholder="Digite uma descrição para o filme"/>
+            </div>
+    
+            <h2>Marcadores</h2>
+            <div>
+              <NoteItem title="React"/>
+              <NoteItem title="React"/>
+              <NoteItem title="React"/>
+              <NoteItem isNew/>
+            </div>
+    
+            <Button title="Salvar alterações" type="submit"/>
+          </Form>
+        </ScrollableArea>
+    </>
   )
 }

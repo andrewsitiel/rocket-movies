@@ -3,17 +3,14 @@ import { FiArrowLeft, FiCamera, FiUser, FiMail, FiLock } from "react-icons/fi";
 import{ Container, Form } from "./styles";
 import{ Input } from "../../components/Input";
 import{ Button } from "../../components/Button";
+import { Link } from "../../components/Link";
 
 
 export function User () {
   return (
     <Container>
       <header>
-      <a href="/">
-        <FiArrowLeft/>
-        <span>Voltar</span>
-      </a>
-
+      <Link href="/" title="Voltar" icon={FiArrowLeft}/>
       </header>
 
       <Form>
