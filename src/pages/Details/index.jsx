@@ -19,7 +19,7 @@ export function Details () {
         <div>
           <p>
             <img src="https://www.github.com/andrewsitiel.png" alt="user's photo"/>
-            criado por Andrews Itiel
+            Por Andrews Itiel
           </p>
 
           <span>

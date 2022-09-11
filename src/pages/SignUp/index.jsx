@@ -22,7 +22,7 @@ export function SignUp () {
         <Button title="Cadastrar" type="submit"/>
       </form>
 
-        <Link title="Voltar para o login" icon={FiArrowLeft}/>
+        <Link href="/" title="Voltar para o login" icon={FiArrowLeft}/>
     </main>
 
     <img src={background} alt="Cinema room" />

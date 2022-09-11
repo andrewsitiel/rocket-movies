@@ -13,7 +13,7 @@ export function Home () {
     <Header/>
     <div>
       <h2>Meus Filmes</h2>
-      <a href="/NewMovie"> <FiPlus/> Adicionar filme</a>
+      <a href="/new"> <FiPlus/> Adicionar filme</a>
     </div>
     
     <ScrollableArea height={"70vh"}>

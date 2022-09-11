@@ -47,12 +47,18 @@ export const Form = styled.form`
       border-radius: 1rem;
     };
   }
->  div:nth-child(4) {
-    padding: 1.6rem;
-    border-radius: 0.8rem;
-    background-color: ${ ({ theme }) => theme.COLORS.BLACK };
+  > div:nth-child(4) {
+      padding: 1.6rem;
+      border-radius: 0.8rem;
+      background-color: ${ ({ theme }) => theme.COLORS.BLACK };
 
-    display: flex;
-    gap: 2.4rem;
-    flex-wrap: wrap;
+      display: flex;
+      gap: 2.4rem;
+      flex-wrap: wrap;
+    }
+  
+  button {
+    max-width: 70rem;
+    justify-self: center;
+  }
 `;

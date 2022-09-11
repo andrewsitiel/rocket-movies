@@ -21,10 +21,10 @@ export function User () {
         </div>
 
         <div>
-          <Input title="User" icon={FiUser} type="text"/>
-          <Input title="E-Mail" icon={FiMail} type="email"/>
-          <Input title="Password" icon={FiLock} type="password"/>
-          <Input title="New Password" icon={FiLock} type="password"/>
+          <Input title="Digite seu nome" icon={FiUser} type="text"/>
+          <Input title="exemplo@gmail.com" icon={FiMail} type="email"/>
+          <Input title="Digite sua senha" icon={FiLock} type="password"/>
+          <Input title="Digite sua nova senha" icon={FiLock} type="password"/>
         </div>
         <Button title="Salvar" type="submit" isLoading/>
       </Form>

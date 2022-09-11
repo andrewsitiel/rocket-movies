@@ -26,7 +26,7 @@ export const Container = styled.header`
     align-items: center;
     gap: 1rem;
     
-    > img {
+    img {
       width: 6.4rem;
       height: 6.4rem;
       border-radius: 50%;
@@ -35,7 +35,7 @@ export const Container = styled.header`
     > div {
       text-align: right;
 
-      > h2 {
+      h2 {
         font-size: 1.4rem;
         line-height: 1.8rem;
       }

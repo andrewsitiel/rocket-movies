@@ -4,7 +4,7 @@ import { Input } from "../Input"
 export function Header () {
   return(
     <Container>
-      <h1>RocketMovies</h1>
+      <a href="/"><h1>RocketMovies</h1></a>
       
       <Input type="text" title="Digite um título"/>
       
@@ -14,13 +14,8 @@ export function Header () {
           <a>sair</a>
         </div>
       
-        <img src="https://www.github.com/andrewsitiel.png" alt="User's image" />
+        <a href="/user"><img src="https://www.github.com/andrewsitiel.png" alt="User's image"/></a>
       </div>
     </Container>
   )
 }
-
-
-
-
-// funcyion

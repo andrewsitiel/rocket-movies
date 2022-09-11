@@ -21,7 +21,7 @@ export function SignIn () {
         <Button title="Entrar" type="submit"/>
       </form>
 
-        <Link title="Criar conta"/>
+        <Link href="/register" title="Criar conta"/>
     </main>
 
     <img src={background} alt="Cinema room" />
