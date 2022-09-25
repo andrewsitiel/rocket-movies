@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-export function Tags ({data}) {
+export function Tags ({ data }) {
   return (
     <Container>
       {

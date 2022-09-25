@@ -1,10 +1,10 @@
-import { Container} from "./styles"
+import { Anchor } from "./styles";
 
 export function Link ({title, icon: Icon, href}) {
   return(
-    <Container href={href}>
+    <Anchor to={href}>
       {Icon && <Icon/>}
      <span>{ title }</span>
-    </Container>
+    </Anchor>
   )
 }

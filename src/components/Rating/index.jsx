@@ -3,7 +3,7 @@ import { Container } from "./styles";
 import theme from "../../styles/theme";
 
 export function Rating ({rating}) {
-  const pink = theme.COLORS.PINK
+  const pink = theme.COLORS.PINK;
   return(
     <Container>
       <FiStar fill={ rating >= 1 ? pink : "transparent"}/>

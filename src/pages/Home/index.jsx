@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FiPlus } from "react-icons/fi";
 
 import { Header } from "../../components/Header";
@@ -13,7 +14,7 @@ export function Home () {
     <Header/>
     <div>
       <h2>Meus Filmes</h2>
-      <a href="/new"> <FiPlus/> Adicionar filme</a>
+      <Link to="/new"> <FiPlus/> Adicionar filme</Link>
     </div>
     
     <ScrollableArea height={"70vh"}>

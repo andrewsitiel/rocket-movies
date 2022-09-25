@@ -5,7 +5,7 @@ import { Container } from "./styles";
 export function Movies ({data}) {
   return(
     <Container>
-      {data.movies.map( ({ title, rating,tags }) => {
+      {data.movies.map( ({ title, rating, tags }) => {
           return (
           <div key={title}>
             <h3>{title}</h3>

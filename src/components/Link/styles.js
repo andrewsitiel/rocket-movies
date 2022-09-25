@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Container = styled.a`
+export const Anchor = styled(Link)`
   display: flex; 
   align-items: center;
   gap: 0.8rem;
