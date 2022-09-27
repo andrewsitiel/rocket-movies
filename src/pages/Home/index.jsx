@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { FiPlus } from "react-icons/fi";
 
 import { Header } from "../../components/Header";
-import { Button } from "../../components/Button";
 import { Movies } from "../../components/Movies";
 import { ScrollableArea } from "../../components/ScrollableArea";
 
@@ -18,6 +17,7 @@ export function Home () {
     </div>
     
     <ScrollableArea height={"70vh"}>
+
       <Movies data={
         {
         movies:[
@@ -40,6 +40,7 @@ export function Home () {
         }
       }
       />
+      
     </ScrollableArea>
 
   </Container>

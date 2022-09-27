@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-
+  
   > div{ 
     padding: 3.2rem;
     border-radius: 1.6rem;
@@ -13,5 +13,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+    > p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 `;
