@@ -15,7 +15,6 @@ export function Rating ({rating}) {
           key= {i}
         />
       )
-      console.log(i)
     }
 
   return(

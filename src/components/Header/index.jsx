@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import { Container } from "./styles";
 import { Input } from "../Input";
 
+import { useAuth } from "../../hooks/auth";
+
 export function Header () {
+  const { user } = useAuth();
+
   return(
     <Container>
       <Link to="/"><h1>RocketMovies</h1></Link>
@@ -11,7 +15,7 @@ export function Header () {
       
       <div>
         <div>
-          <h2>Andrews Itiel</h2>
+          <h2>{user.name}</h2>
           <a>sair</a>
         </div>
       
