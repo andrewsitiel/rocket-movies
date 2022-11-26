@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 2.4rem;
   
-  > div{ 
+  > div {
     padding: 3.2rem;
     border-radius: 1.6rem;
     background-color: ${ ({ theme }) => theme.COLORS.PINK_TRANSPARENT };
@@ -14,10 +14,15 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 1.5rem;
 
+    cursor: pointer;
     > p {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
     }
   }
 `;

@@ -1,4 +1,8 @@
+import { useState, useEffect } from "react";
+import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
+import { api } from "../../services/api";
+
 import { FiPlus } from "react-icons/fi";
 
 import { Header } from "../../components/Header";
@@ -8,6 +12,19 @@ import { ScrollableArea } from "../../components/ScrollableArea";
 import { Container } from "./styles";
 
 export function Home () {
+  const { user } = useAuth();
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+
+    async function getMovies() {
+      const response = await api.get("/movies")
+      setMovies(response.data)
+    }
+
+    getMovies()
+  },[])
+
   return(
   <Container>
     <Header/>
@@ -16,30 +33,9 @@ export function Home () {
       <Link to="/new"> <FiPlus/> Adicionar filme</Link>
     </div>
     
-    <ScrollableArea height={"70vh"}>
+    <ScrollableArea height={"50vh"}>
 
-      <Movies data={
-        {
-        movies:[
-            {
-              title:"Interestellar", rating: 4, tags:["Aventura","Sci-FI","Drama"] 
-            },
-            {
-              title:"Kung-Fu Panda", rating: 3, tags:["Aventura","Sci-FI","Drama"]
-            },
-            {
-              title:"Viagem ao centro da terra", rating: 0, tags:["Aventura","Sci-FI","Drama"]
-            },
-            {
-              title:"Rei Leão", rating: 2, tags:["Aventura","Sci-FI","Drama"]
-            },
-            {
-              title:"A Viagem de Chihiro", rating: 5, tags:["Aventura","Sci-FI","Drama"]
-            },
-          ]
-        }
-      }
-      />
+      <Movies data={{movies}}/>
       
     </ScrollableArea>
 

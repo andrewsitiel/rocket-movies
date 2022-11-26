@@ -5,7 +5,7 @@ export function Tags ({ data }) {
     <Container>
       {
         data.tags.map( tag => {
-          return <span key={ tag }>{ tag }</span>
+          return <span key={ tag.id }>{ tag.name }</span>
         })
       }
     </Container>

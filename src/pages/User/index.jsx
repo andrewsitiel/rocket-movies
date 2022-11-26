@@ -1,3 +1,4 @@
+import { useAuth } from "../../hooks/auth";
 import { FiArrowLeft, FiCamera, FiUser, FiMail, FiLock } from "react-icons/fi";
 
 import{ Container, Form } from "./styles";
@@ -7,6 +8,8 @@ import { Link } from "../../components/Link";
 
 
 export function User () {
+  const { user } = useAuth();
+
   return (
     <Container>
       <header>
@@ -15,7 +18,7 @@ export function User () {
 
       <Form>
         <div>
-          <img src="https://www.github.com/andrewsitiel.png" alt="user-photo" />
+          <img src={user.avatar ?? user.avatar_placeholder} alt="user-photo" />
           <label htmlFor="user-photo"><FiCamera/></label>
           <input type="file" accept="image/*" id="user-photo"/>
         </div>

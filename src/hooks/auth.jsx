@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { api } from "../services/api";
+import avatar_placeholder from "../assets/avatar_placeholder.svg"
 
 const AuthContext = createContext({});
 
@@ -13,7 +14,9 @@ function AuthProvider({children}) {
       const {user, token} = response.data;
 
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
+      
+      user ? user.avatar_placeholder = avatar_placeholder : "";
+      
       localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
       localStorage.setItem("@rocketmovies:token", token);
       setUser(user)
