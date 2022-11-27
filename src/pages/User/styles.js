@@ -27,6 +27,7 @@ export const Form = styled.form`
 
     > img {
       width: 18.6rem;
+      height: 18.6rem;
       border-radius: 50%;
 
     };

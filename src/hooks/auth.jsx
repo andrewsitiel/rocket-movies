@@ -30,6 +30,35 @@ function AuthProvider({children}) {
     }
   }
 
+  async function updateUser({updatedUser, avatarFile}) {
+
+    try {
+      if(avatarFile) {
+        
+        const avatarFormData = new FormData()
+        avatarFormData.append("avatar", avatarFile);
+        
+        const { data } = await api.patch("/users/avatar", avatarFormData);
+        user.avatar_url = `${api.defaults.baseURL}/files/${data.avatarFilename}`;
+      }
+
+      await api.put("/users", updatedUser)
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(updatedUser))
+
+      alert("Usuário atualizado com sucesso!");
+    } catch(error) {
+      
+      if(error.response) {
+        alert(error.response.data.message);
+        console.log(error.response)
+      } else {
+        alert("Não foi possível atualizar o usuário.");
+      }
+
+    }
+
+  }
+
   useEffect(()=> {
 
     const userLocalInfos = localStorage.getItem("@rocketmovies:user");
@@ -47,7 +76,8 @@ function AuthProvider({children}) {
     <AuthContext.Provider
       value={{
         user,
-        signIn
+        signIn,
+        updateUser
       }}
     >
       {children}

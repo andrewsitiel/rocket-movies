@@ -19,7 +19,7 @@ export function Header () {
           <a>sair</a>
         </div>
       
-        <Link to="/user"><img src={user.avatar ?? user.avatar_placeholder} alt="User's image"/></Link>
+        <Link to="/user"><img src={user.avatar_url ?? user.avatar_placeholder} alt="User's image"/></Link>
       </div>
     </Container>
   )

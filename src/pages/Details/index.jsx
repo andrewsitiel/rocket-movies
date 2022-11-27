@@ -39,7 +39,7 @@ export function Details () {
         
         <div>
           <p>
-            <img src={user.avatar ?? user.avatar_placeholder} alt="user's photo"/>
+            <img src={user.avatar_url ?? user.avatar_placeholder} alt="user's photo"/>
             {user.name}
           </p>
 
