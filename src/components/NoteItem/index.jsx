@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 import { FiPlus, FiX } from "react-icons/fi";
 
-export function NoteItem({title, isNew}) {
+export function NoteItem({title, isNew, onClick, ...rest}) {
   return(
     <Container isNew={isNew}>
       <input 
@@ -9,8 +9,9 @@ export function NoteItem({title, isNew}) {
         placeholder="Novo marcador"
         value={title}
         readOnly={!isNew}
+        {...rest}
       />
-      {isNew ? <FiPlus/> : <FiX/>}
+      {isNew ? <FiPlus onClick={onClick}/> : <FiX onClick={onClick}/>}
     </Container>
   )
 }

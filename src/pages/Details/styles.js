@@ -7,8 +7,6 @@ export const Container =styled.div`
     align-items: center;
     gap: 2rem;
 
-    margin-block: 2.4rem; 
-
     > h2 {
       font-weight: 500;
       font-size: 3.6rem;
@@ -18,6 +16,24 @@ export const Container =styled.div`
     svg {
       font-size: 2rem;
     }
+    
+  }
+  
+  aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    
+    > button {
+      background: none;
+      font-size: 16px;
+      color: ${ ({ theme } ) => theme.COLORS.GRAY_400};
+    }
+  }
+
+  h2 + div {
+    margin: 9px 0;
   }
 
   p img {
@@ -25,15 +41,15 @@ export const Container =styled.div`
     height: 1.6rem;
     border-radius: 50%;
   }
-
+  
   div + div { 
     display: flex;
     gap: 1rem;
-
+    
     p, span {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.8rem; 
     };
 
     svg {

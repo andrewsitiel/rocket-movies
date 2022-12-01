@@ -48,13 +48,14 @@ export const Form = styled.form`
     };
   }
   > div:nth-child(4) {
+      width:100%;
       padding: 1.6rem;
       border-radius: 0.8rem;
       background-color: ${ ({ theme }) => theme.COLORS.BLACK };
 
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat( auto-fit, minmax(170px, 1fr) );
       gap: 2.4rem;
-      flex-wrap: wrap;
     }
   
   button {

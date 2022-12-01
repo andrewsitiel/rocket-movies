@@ -17,6 +17,13 @@ export const Container = styled.div`
     width: 100%;
     border: none;
     background-color: ${ ({ theme }) => theme.COLORS.GRAY_800 };
+
+    &:-webkit-autofill {
+      border: none;
+      -webkit-text-fill-color: white;
+      -webkit-box-shadow: 0 0 0px 1000px ${ ({ theme }) => theme.COLORS.GRAY_800 } inset;
+    }
+    
   }
 
   svg {

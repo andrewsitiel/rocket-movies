@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import {
+  DivAnimation,
+  InputAnimation,
+  AnimationProps
+} from "./animation";
 
 export const Container = styled.header`
   padding-block: 3rem;
@@ -8,7 +13,7 @@ export const Container = styled.header`
   justify-content: space-between;
   gap: 6.4rem;
 
-  border-bottom: 1px solid ${ ({ theme })=> theme.COLORS.GRAY_800 };
+  border-bottom: 1px solid ${ ({ theme }) => theme.COLORS.GRAY_800 };
   margin-bottom: 4rem;
 
   h1 {
@@ -19,6 +24,12 @@ export const Container = styled.header`
 
   div:nth-child(2) {
     max-width: 63rem;
+    padding-inline: 1.2rem;
+    animation: ${DivAnimation} ${({isHome}) => isHome ? AnimationProps.open :  AnimationProps.close };
+
+    > input {
+      animation: ${InputAnimation} ${({isHome}) => isHome ? AnimationProps.open :  AnimationProps.close };
+    }
   }
 
   > div:nth-child(3) {
@@ -40,9 +51,10 @@ export const Container = styled.header`
         line-height: 1.8rem;
       }
 
-      > a {
+      > button {
         font-size: 1.4rem;
         line-height: 1.8rem;
+        background: none;
         color: ${ ({ theme }) => theme.COLORS.GRAY_500};
       }
     }

@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { api } from "../services/api";
-import avatar_placeholder from "../assets/avatar_placeholder.svg"
+import avatar_placeholder from "../assets/avatar_placeholder.svg";
 
 const AuthContext = createContext({});
 
@@ -15,6 +15,7 @@ function AuthProvider({children}) {
 
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       
+      user.avatar_url = `${api.defaults.baseURL}/files/${user.avatar}`;
       user ? user.avatar_placeholder = avatar_placeholder : "";
       
       localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
@@ -28,6 +29,13 @@ function AuthProvider({children}) {
         alert("Não foi possível realizar o Login")
       }
     }
+  }
+
+  function signOut() {
+    localStorage.removeItem("@rocketmovies:user");
+    localStorage.removeItem("@rocketmovies:token");
+    
+    setUser()
   }
 
   async function updateUser({updatedUser, avatarFile}) {
@@ -77,7 +85,8 @@ function AuthProvider({children}) {
       value={{
         user,
         signIn,
-        updateUser
+        signOut,
+        updateUser,
       }}
     >
       {children}

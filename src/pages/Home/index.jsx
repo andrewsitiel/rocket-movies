@@ -1,41 +1,49 @@
-import { useState, useEffect } from "react";
-import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
-import { api } from "../../services/api";
 
 import { FiPlus } from "react-icons/fi";
-
 import { Header } from "../../components/Header";
 import { Movies } from "../../components/Movies";
 import { ScrollableArea } from "../../components/ScrollableArea";
 
 import { Container } from "./styles";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 
 export function Home () {
-  const { user } = useAuth();
   const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
+  async function getMovies (title) {
+    const { data } = await api.get(`/movies?title=${title}`);
+    setMovies(data)
+  }
 
-    async function getMovies() {
-      const response = await api.get("/movies")
-      setMovies(response.data)
-    }
+  useEffect(()=>{
+    try {
 
-    getMovies()
+      getMovies("");
+    
+    } catch(error) {
+        if(error.response) {
+          alert(error.response.data.message)
+        } else {
+          alert("Não foi possível salvar o filme, tente novamente.")
+        }
+      }
+  
   },[])
-
+  
   return(
   <Container>
-    <Header/>
+    <Header fetch={getMovies} />
     <div>
       <h2>Meus Filmes</h2>
       <Link to="/new"> <FiPlus/> Adicionar filme</Link>
     </div>
     
     <ScrollableArea height={"50vh"}>
-
-      <Movies data={{movies}}/>
+      {
+        <Movies data={{movies}}/>
+      }
       
     </ScrollableArea>
 

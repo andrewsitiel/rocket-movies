@@ -12,11 +12,13 @@ export function Movies ({data}) {
 
   return(
     <Container>
-      {
+      { data &&
         data.movies.map( ({ id, title, description, rating, tags }) => {
             return (
-              <div onClick={() => {handleNavigate(id)}} key={id}>
-
+              <div
+                key={id}
+                onClick={() => {handleNavigate(id)}}
+              >
                 <h3>{title}</h3>
 
                 <Rating rating={rating}/>

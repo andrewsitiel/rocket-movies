@@ -6,7 +6,7 @@ import { AuthRoutes } from "./auth.routes"
 
 export function Router () {
   const { user } = useAuth();
-  
+
   return(
     <BrowserRouter>
       { user ? <AppRoutes/> : <AuthRoutes/> }
