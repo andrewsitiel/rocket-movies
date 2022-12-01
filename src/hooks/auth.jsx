@@ -58,7 +58,6 @@ function AuthProvider({children}) {
       
       if(error.response) {
         alert(error.response.data.message);
-        console.log(error.response)
       } else {
         alert("Não foi possível atualizar o usuário.");
       }
