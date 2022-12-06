@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
-import { api } from "../../services/api";
 
 import { FiArrowLeft, FiCamera, FiUser, FiMail, FiLock } from "react-icons/fi";
 
@@ -34,7 +33,9 @@ export function User () {
     const updatedUser = Object.assign(user, userData);
 
     await updateUser({updatedUser, avatarFile});
-
+    
+    setOldPassword()
+    setNewPassword()
   }
 
 
