@@ -15,8 +15,8 @@ function AuthProvider({children}) {
 
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       
-      user.avatar_url = `${api.defaults.baseURL}/files/${user.avatar}`;
-      user ? user.avatar_placeholder = avatar_placeholder : "";
+      user.avatar_placeholder = avatar_placeholder;
+      user.avatar ? user.avatar_url = `${api.defaults.baseURL}/files/${user.avatar}`: null;
       
       localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
       localStorage.setItem("@rocketmovies:token", token);
