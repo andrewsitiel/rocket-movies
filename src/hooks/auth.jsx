@@ -50,10 +50,10 @@ function AuthProvider({children}) {
         user.avatar_url = `${api.defaults.baseURL}/files/${data.avatarFilename}`;
       }
 
-      await api.put("/users", updatedUser)
+      await api.put("/users", updatedUser).then(() => alert("Usuário atualizado com sucesso!"))
       localStorage.setItem("@rocketmovies:user", JSON.stringify(updatedUser))
 
-      alert("Usuário atualizado com sucesso!");
+      
     } catch(error) {
       
       if(error.response) {

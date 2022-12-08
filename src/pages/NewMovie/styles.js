@@ -54,7 +54,7 @@ export const Form = styled.form`
       background-color: ${ ({ theme }) => theme.COLORS.BLACK };
 
       display: grid;
-      grid-template-columns: repeat( auto-fit, minmax(170px, 1fr) );
+      grid-template-columns: repeat( auto-fit, minmax(170px, 245px) );
       gap: 2.4rem;
     }
   

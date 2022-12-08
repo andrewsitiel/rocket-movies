@@ -14,7 +14,7 @@ import { NoteItem } from "../../components/NoteItem";
 export function NewMovie () {
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState("");
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState();
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
 
@@ -41,12 +41,12 @@ export function NewMovie () {
       alert("Avalie o filme com uma nota de 0 a 5");
       return
     }
-
+    
     if(newTag) {
       alert("Você deixou tags não salvos no campo.")
       return
     }
-
+        
     const movieData ={
       title,
       description,
@@ -56,8 +56,8 @@ export function NewMovie () {
 
     setTags([])
     setTitle("")
+    setDescription("")
     setRating("")
-    setDescription ("")
 
     try {
       await api.post("/movies", movieData);

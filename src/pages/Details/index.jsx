@@ -65,7 +65,7 @@ export function Details () {
         <Tags data={{ tags: movie.tags ?? [] }} />
         
         <section>
-         {movie.description}
+         {movie.description ?? "Sem descrição."}
         </section>
       </ScrollableArea>
     </Container>
