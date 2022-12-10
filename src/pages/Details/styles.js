@@ -58,6 +58,6 @@ export const Container =styled.div`
   }
 
   div:nth-child(4) {
-    margin-block: 4rem;
+    margin-block: 2.7rem 4.5rem;
   }
 `;

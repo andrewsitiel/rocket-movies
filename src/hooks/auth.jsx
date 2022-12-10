@@ -42,7 +42,6 @@ function AuthProvider({children}) {
 
     try {
       const response = await api.put("/users", updatedUser)
-      localStorage.setItem("@rocketmovies:user", JSON.stringify(updatedUser))
       
       if(avatarFile) {
         
@@ -53,6 +52,7 @@ function AuthProvider({children}) {
         user.avatar_url = `${api.defaults.baseURL}/files/${data.avatarFilename}`;
       }
       
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(updatedUser))
       alert(response.data)
     
     } catch(error) {
