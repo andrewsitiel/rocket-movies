@@ -33,9 +33,7 @@ export function User () {
     const updatedUser = Object.assign(user, userData);
 
     await updateUser({updatedUser, avatarFile});
-    
-    setOldPassword()
-    setNewPassword()
+
   }
 
 

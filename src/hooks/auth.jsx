@@ -41,6 +41,9 @@ function AuthProvider({children}) {
   async function updateUser({updatedUser, avatarFile}) {
 
     try {
+      const response = await api.put("/users", updatedUser)
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(updatedUser))
+      
       if(avatarFile) {
         
         const avatarFormData = new FormData()
@@ -49,11 +52,9 @@ function AuthProvider({children}) {
         const { data } = await api.patch("/users/avatar", avatarFormData);
         user.avatar_url = `${api.defaults.baseURL}/files/${data.avatarFilename}`;
       }
-
-      await api.put("/users", updatedUser).then(() => alert("Usuário atualizado com sucesso!"))
-      localStorage.setItem("@rocketmovies:user", JSON.stringify(updatedUser))
-
       
+      alert(response.data)
+    
     } catch(error) {
       
       if(error.response) {
