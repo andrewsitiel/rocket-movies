@@ -5,12 +5,24 @@ export const Container = styled.div`
   height: 100vh;
 
   header {
-    width: 100%;
+    width: 90vw;
+    margin: auto;
     height: 14.4rem;
-    padding-left: 16.8rem;
     display: flex;
     align-items: center;
-    background-color: ${ ({ theme }) => theme.COLORS.PINK_TRANSPARENT };
+    
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      
+      width: 100%;
+      height: 14.4rem;
+      background-color: ${ ({ theme }) => theme.COLORS.PINK_TRANSPARENT };
+
+    }
   };
 `;
 
@@ -29,10 +41,10 @@ export const Form = styled.form`
       width: 18.6rem;
       height: 18.6rem;
       border-radius: 50%;
-
+      margin: auto;
     };
     
-    input#user-photo {
+    label + input {
       position: absolute;
       z-index: -100;
       width: 0;

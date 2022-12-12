@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
 
-import { FiUser, FiMail, FiLock } from "react-icons/fi";
-import background from "../../assets/cinema.png"
+import { FiMail, FiLock } from "react-icons/fi";
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -50,7 +49,7 @@ export function SignIn () {
         <Link href="/register" title="Criar conta"/>
     </main>
 
-    <img src={background} alt="Cinema room" />
+    <section></section>
     </Container>
   )
 }

@@ -12,6 +12,7 @@ export default  {
       GRAY_400: "hsl(273, 10%, 79%)",
       
       BLACK: "hsl(255, 11%, 5%)",
+      BLACK_TRANSPARENT: "hsla(255, 11%, 5%, 0.9)",
       WHITE:"hsl(244, 237%, 232%)",
     }
 

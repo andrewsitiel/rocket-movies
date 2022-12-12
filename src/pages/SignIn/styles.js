@@ -1,16 +1,11 @@
 import styled from "styled-components";
+import background from "../../assets/cinema.png";
 
 export const Container = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: auto 60vw;
-  grid-template-areas: "form background";
-
-  img {
-    width: 100%;
-    object-fit: cover;
-    filter: opacity(0.5);
-  }
+  align-content: center;
+  justify-items: center;
 
   main{
     max-width: 34rem;
@@ -54,4 +49,15 @@ export const Container = styled.div`
   a {
     justify-self: center;
   }
+
+  @media(min-width:768px) {
+    grid-template-columns: auto 60vw;
+    
+    section {
+      width: 100%;
+      object-fit: cover;
+      filter: opacity(0.5);
+      background: url(${background});
+    }
+}
 `;

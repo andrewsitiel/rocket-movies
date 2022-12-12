@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding-inline: 12.3rem;
+  width: 90vw;
+  margin: auto;
+
+  @media(min-width:768px) {
+      width: 77vw;
+  }
 `;
 
 export const Form = styled.form`
@@ -11,7 +16,7 @@ export const Form = styled.form`
   legend {
     margin-top: 2.4rem; 
     font-weight: 500;
-    font-size: 3.6rem;
+    font-size: clamp(1rem, 1rem + 6vw , 3.6rem);
     line-height: 4.7rem;
   }
 

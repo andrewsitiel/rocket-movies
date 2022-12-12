@@ -7,7 +7,6 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Link } from "../../components/Link";
 
-import background from "../../assets/cinema.png";
 import { Container } from "./styles";
 
 export function SignUp () {
@@ -59,7 +58,7 @@ export function SignUp () {
       <Link href="/" title="Voltar para o login" icon={FiArrowLeft}/>
     </main>
 
-    <img src={background} alt="Cinema room" />
+    <section></section>
     </Container>
   )
 }
