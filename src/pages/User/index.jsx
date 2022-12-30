@@ -37,13 +37,12 @@ export function User () {
 
   }
 
-
   function handleUserAvatar(event) {
     const file = event.target.files[0];
     setAvatarFile(file);
 
     const avatarPreview = URL.createObjectURL(file);
-   setAvatar(avatarPreview);
+    setAvatar(avatarPreview);
   }
 
   return (
@@ -58,7 +57,7 @@ export function User () {
           <div>
             <img src={avatar ?? user.avatar_placeholder} alt="user-photo" />
             <label htmlFor="user-photo"><FiCamera/></label>
-            <input type="file" accept="image/*" onChange={handleUserAvatar}/>
+            <input id="user-photo" type="file" accept="image/*" onChange={handleUserAvatar}/>
           </div>
 
           <div>
